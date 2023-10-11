@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from accounts.models import User
 
 
 class CustomUserForm(UserCreationForm):
@@ -11,12 +12,12 @@ class CustomUserForm(UserCreationForm):
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder':'Enter confirmpassword'}))
     phonenumber = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter phonenumber'}))
     
-    def clean_phonenumber(self):
-        phonenumber = self.cleaned_data['phonenumber']
+    # def clean_phonenumber(self):
+    #     phonenumber = self.cleaned_data['phonenumber']
     
-        if not phonenumber.isdigit() or len(phonenumber)<10 or len(phonenumber)>13:
-            raise forms.ValidationError("Given Phone number is invalid...try again")
-        return phonenumber   
+    #     if not phonenumber.isdigit() or len(phonenumber)<10 or len(phonenumber)>13:
+    #         raise forms.ValidationError("Given Phone number is invalid...try again")
+    #     return phonenumber   
     
     class  Meta:
        model = User

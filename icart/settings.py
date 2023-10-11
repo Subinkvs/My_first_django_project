@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'accounts',
+     'phonenumber_field'
 ]
 
 MIDDLEWARE = [
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'icart.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'icart_ecommerce',
+        'NAME': 'Django_ecommerce',
         'USER': 'postgres',
         'PASSWORD': '261343',
         'HOST' : 'localhost',
@@ -137,3 +139,4 @@ EMAIL_HOST_USER = 'subinsundar9646k@gmail.com'
 EMAIL_HOST_PASSWORD = 'kdkn zolw btbc vkhh'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'accounts.User'
